@@ -1,0 +1,85 @@
+import type { FocusSessionsData } from "@/types/focus-sessions";
+
+export const focusSessionsMockData: FocusSessionsData = {
+  activeSession: {
+    id: "active-1",
+    title: "Deep focus on algorithm review",
+    subject: "Data Structures",
+    duration: "32 min left",
+    status: "Active",
+    progress: 68,
+    technique: "Pomodoro",
+    startTime: "9:30 AM",
+    endTime: "10:15 AM",
+  },
+  upcomingSessions: [
+    {
+      id: "upcoming-1",
+      title: "Memory recall flashcards",
+      subject: "Machine Learning",
+      duration: "25 min",
+      status: "Upcoming",
+      progress: 0,
+      technique: "Active Recall",
+      startTime: "11:00 AM",
+      endTime: "11:25 AM",
+    },
+    {
+      id: "upcoming-2",
+      title: "Problem-solving sprint",
+      subject: "Algorithms",
+      duration: "40 min",
+      status: "Upcoming",
+      progress: 0,
+      technique: "Time boxing",
+      startTime: "2:00 PM",
+      endTime: "2:40 PM",
+    },
+  ],
+  recentSessions: [
+    {
+      id: "recent-1",
+      title: "Concept mapping",
+      subject: "Systems Design",
+      duration: "35 min",
+      status: "Complete",
+      progress: 100,
+      technique: "Mind Mapping",
+      startTime: "7:30 AM",
+      endTime: "8:05 AM",
+    },
+    {
+      id: "recent-2",
+      title: "Speed coding practice",
+      subject: "React",
+      duration: "50 min",
+      status: "Complete",
+      progress: 100,
+      technique: "Single-tasking",
+      startTime: "8:30 AM",
+      endTime: "9:20 AM",
+    },
+  ],
+  stats: {
+    dailyFocusMinutes: 174,
+    focusStreak: 6,
+    sessionsCompleted: 5,
+  },
+  suggestions: [
+    {
+      id: "suggestion-1",
+      title: "Take a micro-break",
+      detail: "A 5-minute reset after your current session will keep momentum high.",
+    },
+    {
+      id: "suggestion-2",
+      title: "Focus on one subject",
+      detail: "Keep your next session concentrated on one topic for better retention.",
+    },
+    {
+      id: "suggestion-3",
+      title: "Review the last session",
+      detail: "Quickly revisit yesterday’s notes to keep the material fresh.",
+    },
+  ],
+};
