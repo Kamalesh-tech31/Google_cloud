@@ -1,6 +1,8 @@
 const studyPlannerRoutes = require("./routes/studyPlannerRoutes");
 const focusRoutes = require("./routes/focusRoutes");
 const quizRoutes = require("./routes/quizRoutes");
+const aiAssistantRoutes = require("./routes/aiAssistantRoutes");
+const dashboardsRoutes = require("./routes/dashboardsRoutes");
 
 const express = require("express");
 const cors = require("cors");
@@ -25,6 +27,8 @@ app.use("/api/onboarding", onboardingRoutes);
 app.use("/api/study-planner", studyPlannerRoutes);
 app.use("/api/focus-sessions", focusRoutes);
 app.use("/api/quiz", quizRoutes);
+app.use("/api/ai-assistant", aiAssistantRoutes);
+app.use("/api/dashboard", dashboardsRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "Backend is running successfully!" });

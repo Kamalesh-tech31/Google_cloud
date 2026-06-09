@@ -4,21 +4,56 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   res.json({
-    questions: [
+    generatedQuizzes: [
       {
-        question: "What is DBMS?",
-        options: ["Database", "Compiler", "OS"],
-        answer: "Database"
+        id: "1",
+        title: "DSA Fundamentals",
+        subject: "DSA",
+        status: "Ready",
+        questions: 15,
+        createdAt: "Today"
+      },
+      {
+        id: "2",
+        title: "React Basics",
+        subject: "React",
+        status: "In Progress",
+        questions: 10,
+        createdAt: "Yesterday"
       }
-    ]
-  });
-});
+    ],
 
-router.post("/submit", (req, res) => {
-  res.json({
-    score: 8,
-    total: 10,
-    message: "Quiz submitted"
+    performance: {
+      accuracy: 85,
+      completionRate: 92,
+      averageScore: 88
+    },
+
+    history: [
+      {
+        id: "1",
+        title: "DBMS Quiz",
+        date: "2025-06-08",
+        score: 90,
+        status: "Passed",
+        accuracy: 88
+      },
+      {
+        id: "2",
+        title: "OS Quiz",
+        date: "2025-06-07",
+        score: 82,
+        status: "Passed",
+        accuracy: 80
+      }
+    ],
+
+    suggestedSubjects: [
+      "DSA",
+      "React",
+      "DBMS",
+      "Operating Systems"
+    ]
   });
 });
 

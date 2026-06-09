@@ -2,29 +2,49 @@ const express = require("express");
 
 const router = express.Router();
 
-let activeSession = false;
-
 router.get("/", (req, res) => {
   res.json({
-    activeSession,
-    focusTime: 50,
-    distractionsBlocked: 3
-  });
-});
+    activeSession: {
+      id: "1",
+      title: "DSA Practice Session",
+      subject: "Data Structures & Algorithms",
+      duration: "45 min",
+      technique: "Pomodoro",
+      progress: 60
+    },
 
-router.post("/start", (req, res) => {
-  activeSession = true;
+    recentSessions: [
+      {
+        id: "1",
+        title: "Arrays Practice",
+        subject: "DSA",
+        duration: "30 min",
+        technique: "Pomodoro",
+        progress: 100
+      },
+      {
+        id: "2",
+        title: "DBMS Revision",
+        subject: "DBMS",
+        duration: "40 min",
+        technique: "Deep Work",
+        progress: 80
+      },
+      {
+        id: "3",
+        title: "React Hooks",
+        subject: "React",
+        duration: "50 min",
+        technique: "Pomodoro",
+        progress: 100
+      }
+    ],
 
-  res.json({
-    message: "Focus session started"
-  });
-});
-
-router.post("/end", (req, res) => {
-  activeSession = false;
-
-  res.json({
-    message: "Focus session ended"
+    stats: {
+      dailyFocusMinutes: 180,
+      focusStreak: 7,
+      sessionsCompleted: 12
+    }
   });
 });
 

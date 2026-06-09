@@ -1,6 +1,9 @@
 import type { DashboardAgentResponse } from "@/types/dashboard";
-import { dashboardMockData } from "@/lib/mock-dashboard";
 
 export async function getDashboardData(): Promise<DashboardAgentResponse> {
-  return dashboardMockData;
+  const response = await fetch(
+    "http://localhost:5000/api/dashboard"
+  );
+
+  return response.json();
 }
