@@ -1,3 +1,7 @@
+const studyPlannerRoutes = require("./routes/studyPlannerRoutes");
+const focusRoutes = require("./routes/focusRoutes");
+const quizRoutes = require("./routes/quizRoutes");
+
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -18,39 +22,15 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/onboarding", onboardingRoutes);
+app.use("/api/study-planner", studyPlannerRoutes);
+app.use("/api/focus-sessions", focusRoutes);
+app.use("/api/quiz", quizRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "Backend is running successfully!" });
 });
 
-app.get("/api/study-planner", (req, res) => {
-  res.json({
-    dailyPlan: [],
-    weeklyPlan: [],
-    upcomingSessions: [],
-    priorityTasks: [],
-    recommendations: [],
-  });
-});
 
-app.get("/api/quiz", (req, res) => {
-  res.json({
-    generatedQuizzes: [],
-    performance: {},
-    history: [],
-    suggestedSubjects: [],
-  });
-});
-
-app.get("/api/focus-sessions", (req, res) => {
-  res.json({
-    activeSession: null,
-    upcomingSessions: [],
-    recentSessions: [],
-    stats: {},
-    suggestions: [],
-  });
-});
 
 const PORT = process.env.PORT || 5000;
 
