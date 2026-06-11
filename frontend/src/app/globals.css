@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@layer base {
+  :root {
+    --zenix-bg-primary: #050505;
+    --zenix-bg-secondary: #0A0A0A;
+    --zenix-bg-sidebar: #0F0F0F;
+    --zenix-bg-card: #141414;
+    --zenix-bg-card-elevated: #1A1A1A;
+    --zenix-border: #232323;
+    --zenix-accent-primary: #D4AF37;
+    --zenix-accent-secondary: #E6C766;
+    --zenix-accent-hover: #F1D97A;
+    --zenix-text-primary: #FFFFFF;
+    --zenix-text-secondary: #A0A0A0;
+    --zenix-text-muted: #707070;
+    --zenix-success: #22C55E;
+    --zenix-warning: #D4AF37;
+    --zenix-error: #EF4444;
+
+    --background: 0 0% 3.1%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 87% 59%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 45 87% 65%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 0 0% 63%;
+    --accent: 45 87% 59%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 45 87% 59%;
+    --radius: 1rem;
+
+    font-family: "Inter", system-ui, sans-serif;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  /* Typography Hierarchy */
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  small {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .metric-number {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+
+  /* Layout System */
+  .page-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .content-wrapper {
+    padding: 2rem 0;
+  }
+
+  .space-section {
+    margin-bottom: 2rem;
+  }
+
+  .space-card {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Zenix theme utilities */
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+
+  .bg-background-secondary {
+    background-color: var(--zenix-bg-secondary);
+  }
+
+  .bg-sidebar {
+    background-color: var(--zenix-bg-sidebar);
+  }
+
+  .bg-card {
+    background-color: var(--zenix-bg-card);
+  }
+
+  .bg-success {
+    background-color: var(--zenix-success);
+  }
+
+  .border-border {
+    border-color: var(--zenix-border);
+  }
+
+  .text-text-primary {
+    color: var(--zenix-text-primary);
+  }
+
+  .text-text-secondary {
+    color: var(--zenix-text-secondary);
+  }
+
+  .text-text-muted {
+    color: var(--zenix-text-muted);
+  }
+
+  .bg-elevated {
+    background-color: var(--zenix-bg-card-elevated);
+  }
+
+  .border-premium {
+    border: 1px solid var(--zenix-border);
+  }
+
+  .shadow-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+  }
+
+  .transition-smooth {
+    transition: all 300ms ease;
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .scroll-animate {
+        animation: fadeInUp 0.6s ease-out both;
+        animation-timeline: view();
+      }
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
